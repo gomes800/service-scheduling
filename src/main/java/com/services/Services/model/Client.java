@@ -4,7 +4,7 @@ import com.services.Services.model.enums.UserType;
 
 import java.util.List;
 
-public class Client extends User{
+public class Client extends Users {
 
     private String phone;
     private List<Appointment> appointments;

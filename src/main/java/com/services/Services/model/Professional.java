@@ -4,7 +4,7 @@ import com.services.Services.model.enums.UserType;
 
 import java.util.List;
 
-public class Professional extends User{
+public class Professional extends Users {
 
     private String specialty;
     private String phone;

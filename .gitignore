@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar todos os arquivos de configuração de ambiente
+application-*.properties
