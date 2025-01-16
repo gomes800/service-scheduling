@@ -1,8 +1,11 @@
 package com.services.Services.model;
 
 import com.services.Services.model.enums.UserType;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,6 +13,9 @@ public class Professional extends Users {
 
     private String specialty;
     private String phone;
+    @OneToMany(mappedBy = "professional", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Appointment> appointments = new ArrayList<>();
+    @OneToMany(mappedBy = "professional", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Time> agenda;
 
     public Professional(){}

@@ -1,7 +1,9 @@
 package com.services.Services.model;
 
 import com.services.Services.model.enums.UserType;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
 public class Client extends Users {
 
     private String phone;
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Appointment> appointments;
 
     public Client(){}

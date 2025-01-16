@@ -1,10 +1,7 @@
 package com.services.Services.model;
 
 import com.services.Services.model.enums.Status;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -14,8 +11,14 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "client_id, nullable = false")
     private Client client;
+    @ManyToOne
+    @JoinColumn(name = "professional_id, nullable = false")
     private Professional professional;
+    @ManyToOne
+    @JoinColumn(name = "service_id, nullable = false")
     private Service service;
     private LocalDateTime dateTime;
     private Status status;
