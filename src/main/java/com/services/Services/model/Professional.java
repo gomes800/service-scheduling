@@ -1,9 +1,11 @@
 package com.services.Services.model;
 
 import com.services.Services.model.enums.UserType;
+import jakarta.persistence.Entity;
 
 import java.util.List;
 
+@Entity
 public class Professional extends Users {
 
     private String specialty;
